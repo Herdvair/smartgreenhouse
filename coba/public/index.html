@@ -1,0 +1,102 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ESP IoT Firebase App</title>
+
+    <!-- update the version number as needed -->
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
+
+    <!-- include only the Firebase features as you need -->
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-database.js"></script>
+
+    <script>
+     // REPLACE WITH YOUR web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyCRasveAyDD8FhV8cRyZ9uYPnNx7v7JfcE",
+        authDomain: "green-house2.firebaseapp.com",
+        databaseURL: "https://green-house2-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "green-house2",
+        storageBucket: "green-house2.appspot.com",
+        messagingSenderId: "743962388811",
+        appId: "1:743962388811:web:5fa11987af8439949aa0ce"
+      };
+
+      // Initialize firebase
+      firebase.initializeApp(firebaseConfig);
+
+      // Make auth and database references
+      const auth = firebase.auth();
+      const db = firebase.database();
+
+    </script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+  <!--TOP BAR-->
+  <div class="topnav">
+    <h1>Sensor Readings App <i class="fas fa-clipboard-list"></i></h1>
+  </div>
+    <div class="cards">
+      <!--TEMPERATURE-->
+      <div class="card">
+        <p><i class="fas fa-thermometer-half" style="color:#059e8a;"></i>SUHU</p>
+        <p><span class="reading"><span id="temp"></span> &deg;C</span></p>
+      </div>
+      <!--HUMIDITY-->
+      <div class="card">
+        <p><i class="fas fa-tint" style="color:#00add6;"></i>KELEMBAPAN</p>
+        <p><span class="reading"><span id="hum"></span> &percnt;</span></p>
+      </div>
+      <!--PRESSURE-->
+      <div class="card">
+        <p><i class="fas fa-angle-double-down" style="color:#e1e437;"></i> INTENSITAS CAHAYA</p>
+        <p><span class="reading"><span id="light"></span></span></p>
+      </div>
+    </div>
+  </div>
+     <!-- Actuators -->
+      <div class="actuators">
+        <div class="card">
+          <p> <i class="fa-light fa-fan-table" style ="color: aqua;"></i> KIPAS ANGIN </p>
+          <p><span class="reading"> <span id = "fan"></span></span> </p>
+             <div class="actuator_status">
+                  <span class="status_name" id="status_fan">Mati</span>
+             </div>
+            </div>
+            <div class="card">
+             <p> <i class="fa-light fa-fan-table" style ="color: aqua;"></i> PENGHANGAT </p>
+             <p><span class="reading"> <span id = "heater"></span></span> </p>
+                <div class="actuator_status">
+                     <span class="status_name" id="status_heater">Mati</span>
+                </div>
+              </div>
+              <div class="card">
+                <p> <i class="fa-light fa-fan-table" style ="color: aqua;"></i> MIST MAKER </p>
+          <p><span class="reading"> <span id = "mist"></span></span> </p>
+             <div class="actuator_status">
+                  <span class="status_name" id="status_mist">Mati</span>
+             </div>
+            </div>
+            <div class="card">
+             <p> <i class="fa-light fa-fan-table" style ="color: aqua;"></i> LAMPU </p>
+          <p><span class="reading"> <span id = "lamp"></span></span> </p>
+             <div class="actuator_status">
+                  <span class="status_name" id="status_lamp">Mati</span>
+             </div
+             ></div>
+                    </div>
+
+                    <!-- Sensors -->
+                   
+            </div>
+        </div>
+    
+    <script src="scripts/auth.js"></script>
+    <script src="scripts/index.js"></script>
+  </body>
+</html>
